@@ -19,7 +19,6 @@
     <div>
       <p class="text-uppercase fw-bold mb-0" style="color: yellow;text-shadow: 0 0 20px yellow;">Dogecoins </p>
       <p class="d-flex justify-content-center align-items-center gap-2">
-        <!-- <img src="/public/assets/Kuboints.png" alt="Kuboints"> -->
         <span id="puntuacion">0</span>
       </p>
     </div>
@@ -46,17 +45,34 @@
       </div>
     </div>
     <div id="divBotones" class="text-center d-flex gap-1 justify-content-center">
-      <button id="btnNuevo" class="btn btn-limpiar">Limpiar Mesa</button>
-      <button id="btnDetener" class="btn btn-plantarse">Plantarse</button>
-      <button id="btnPedir" class="btn btn-pedir">Pedir Carta</button>
+      <button id="btnNuevo" class="btn-limpiar">Limpiar Mesa</button>
+      <button id="btnDetener" class="btn-plantarse">Plantarse</button>
+      <button id="btnPedir" class="btn-pedir">Pedir Carta</button>
     </div>
   </main>
 
-  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="info-game ">?</button>
+  <button type="button" class="info-game" data-bs-toggle="modal" data-bs-target="#exampleModal">?</button>
 
   <!-- <div id="app"></div> -->
 
   <script type="module" src="/main.js"></script>
 </body>
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </html>
