@@ -84,10 +84,12 @@ const productosBrand = async (id) => {
 const redimir = async (idMarca, idProducto, points) => {
 
     let dogecoins = JSON.parse(localStorage.getItem('dogecoins'))
-
+    
     if (dogecoins === 0) return
-    if (points <= dogecoins) {
-        
+    if(points > dogecoins){
+        return alert('Kuboinz insuficientes')
+    }
+    else if (points <= dogecoins) {
         try {
             const url = `${baseUrl}/brands/${idMarca}/products/${idProducto}/redeem`;
             const resp = await fetch(url, { headers, method: 'POST' });

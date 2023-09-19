@@ -20,7 +20,7 @@ const premios = async () => {
     let cadena = ''
 
     for (let i = 0; i < awards.length; i++) {
-        const {description, name, image, kuboinz, created_at} = awards[i]
+        const { description, name, image, kuboinz, created_at } = awards[i]
         cadena += ` <div class="card text-decoration-none text-dark pointer">
                         <div class="position-absolute rounded-pill bg-warning bg-opacity-50 top-0 end-0 me-2 mt-1">
                             <span class="ps-2" style="color">${kuboinz}</span> <img src="public/assets/kuboints.jpeg">
@@ -29,6 +29,9 @@ const premios = async () => {
                         <div class="card-body">
                         <p class="card-text text-center fw-bold capitalize fs-5">${name}</p>
                         <p class="card-text">${description}</p>
+                        <div class="w-100 d-flex justify-content-end">
+                            <small class="text-secondary">Redimido: ${created_at.split('T')[0]}</small>
+                        </div>
                         </div>
                     </div>`
     }
