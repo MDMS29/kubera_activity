@@ -92,5 +92,5 @@ btnNuevo.addEventListener('click', () => {
 
 
 canjearPuntos.addEventListener('click', () => {
-    console.log('Canjear')
+    window.location.href = 'canjear.html'
 })
