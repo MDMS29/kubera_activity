@@ -1,16 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html, body {
   margin: 0px;
-  background-color: #2F4F30;
+  background: url(./public/assets/bg-table.jpeg);
   color: white;
+  background-size: cover;
 }
 
-
-.titulo {
+.header {
   text-align: center;
-  background-color: black;
+  background: url(./public/assets/bg-image.jpg);
+  background-position: 50%;
   color: white;
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 25px;
+}
+.titulo-header{
+  color: rgb(238, 167, 13);
+  text-shadow: 0 0 10px yellow;
 }
 
 .carta {
