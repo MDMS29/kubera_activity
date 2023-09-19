@@ -92,5 +92,7 @@ btnNuevo.addEventListener('click', () => {
 
 
 canjearPuntos.addEventListener('click', () => {
+    console.log( puntuacionGlobal );
+    localStorage.setItem('dogecoins', Number(spanPuntuG.innerText) );
     window.location.href = 'canjear.html'
 })
