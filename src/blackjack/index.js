@@ -96,3 +96,7 @@ canjearPuntos.addEventListener('click', () => {
     localStorage.setItem('dogecoins', Number(spanPuntuG.innerText) );
     window.location.href = 'canjear.html'
 })
+
+
+let dogecoins = JSON.parse(localStorage.getItem('dogecoins')) ?? 0
+spanPuntuG.innerHTML = dogecoins 

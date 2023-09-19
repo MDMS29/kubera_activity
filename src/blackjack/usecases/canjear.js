@@ -33,6 +33,10 @@ axios.post(`${baseUrl}/auth/sign_in`, loginData, { mode: "cors" })
 let cadena = ''
 const divBrands = document.querySelector('#div-brands')
 
+let dogecoins = JSON.parse(localStorage.getItem('dogecoins'))
+const puntuacionCanje = document.querySelector('#puntuacionCanje')
+puntuacionCanje.innerHTML = dogecoins
+
 const MarcasMulticatalogo = async () => {
     cadena = ''
     const res = await axios.get(`${baseUrl}/brands`, { headers })
@@ -40,7 +44,6 @@ const MarcasMulticatalogo = async () => {
             return resp.data.brands
         })
     marcas = res
-    console.log(marcas[0])
     for (let i = 0; i < marcas.length; i++) {
         const { id, name, logo } = marcas[i]
         cadena += ` <div onclick="productosBrand(${id})" class="card text-decoration-none text-dark">
@@ -62,7 +65,6 @@ const productosBrand = async (id) => {
             return resp.data.products
         })
     productos = res
-    console.log(productos[0])
     for (let i = 0; i < productos.length; i++) {
         const { name, image, kuboinz } = productos[i]
         cadena += ` <div class="card text-decoration-none text-dark pointer" onclick="redimir(${id}, ${productos[i].id}, ${kuboinz})">
@@ -79,21 +81,29 @@ const productosBrand = async (id) => {
     divBrands.innerHTML = cadena
 }
 
-const redimir = async (idMarca, idProducto, points ) => {
-    if( points < puntuacionGlobal)
-    try {
-        const url = `${baseUrl}/brands/${idMarca}/products/${idProducto}/redeem`;
-        const resp = await fetch(url, { headers, method: 'POST' });
-        const result = await resp.json();
+const redimir = async (idMarca, idProducto, points) => {
+
+    let dogecoins = JSON.parse(localStorage.getItem('dogecoins'))
+
+    if (dogecoins === 0) return
+    if (points <= dogecoins) {
         
-    } catch (error) {
-        console.log(error)
+        try {
+            const url = `${baseUrl}/brands/${idMarca}/products/${idProducto}/redeem`;
+            const resp = await fetch(url, { headers, method: 'POST' });
+            const result = await resp.json();
+            if (result.REEDEEM_RESULT == 'redeem_success') {
+                dogecoins -= points
+                alert('Se ha redimido este bono')
+            } else {
+                alert('No hay bonos disponibles')
+            }
+            localStorage.setItem('dogecoins', Number(dogecoins))
+        } catch (error) {
+            console.log(error)
+        }
+
     }
-    
-    
-    
-    // hp://sena.kubera.work/api/v3/brands/(id_marca)/products/(id_producto)/redeem
-    // console.log(res)
 }
 
 
