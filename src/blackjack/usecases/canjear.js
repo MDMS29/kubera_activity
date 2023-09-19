@@ -107,6 +107,12 @@ const redimir = async (idMarca, idProducto, points) => {
 }
 
 
+const btnRedimir = document.querySelector('#redimir-puntos')
+btnRedimir.addEventListener('click', () => {
+    window.location.href = 'awards.html'
+})
+
+
 
 
 

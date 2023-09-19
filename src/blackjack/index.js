@@ -100,3 +100,8 @@ canjearPuntos.addEventListener('click', () => {
 
 let dogecoins = JSON.parse(localStorage.getItem('dogecoins')) ?? 0
 spanPuntuG.innerHTML = dogecoins 
+
+const btnRedimir = document.querySelector('#redimir-puntos')
+btnRedimir.addEventListener('click', () => {
+    window.location.href = 'awards.html'
+})
