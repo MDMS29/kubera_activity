@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
-  margin: 0px;
   background: url(./public/assets/bg-table.jpeg);
   color: white;
   background-size: cover;
@@ -15,7 +15,6 @@ html, body {
   background: url(./public/assets/bg-image.jpg);
   background-position: 50%;
   color: white;
-  /* padding: 20px; */
   font-size: 25px;
 }
 .titulo-header{
@@ -32,4 +31,60 @@ html, body {
 
 #computadora-cartas, #jugador-cartas {
   height: 240px;
+}
+
+.info-game{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  bottom: 50px;
+  right: 50px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  background: blue;
+  box-shadow: 0 0 10px 5px rgb(19, 46, 168);
+}
+.info-game:hover{
+  background: rgb(52, 52, 240);
+  box-shadow: 0 0 10px 5px rgb(42, 63, 158);
+}
+
+.btn-limpiar{
+  border-radius: 50%;
+  background: red;
+  color: white;
+  width: 150px;
+  height: 60px;
+  font-weight: 700;
+  transition: all ease .3s;
+}
+.btn-limpiar:hover{
+  background: rgb(158, 1, 1);
+}
+.btn-plantarse{
+  font-weight: 700;
+  border-radius: 50%;
+  color: white;
+  background: blue;
+  height: 60px;
+  margin-top: 15px;
+  width: 150px;
+  transition: all ease .3s;
+}
+.btn-plantarse:hover{
+  background: rgb(0, 0, 128);
+}
+.btn-pedir{
+  font-weight: 700;
+  border-radius: 50%;
+  color: white;
+  background: green;
+  height: 60px;
+  width: 150px;
+  transition: all ease .3s;
+}
+.btn-pedir:hover{
+  background: rgb(0, 78, 0);
 }

@@ -17,52 +17,44 @@
   <header class="header d-flex justify-content-around align-items-center">
     <span class="titulo-header text-uppercase fw-bold">Blackjack</span>
     <div>
-      <span class="text-uppercase fw-bold" style="color: yellow;text-shadow: 0 0 20px yellow;">Dogecoins </span>
-      <br>
-      <span id="puntuacion">0</span>
+      <p class="text-uppercase fw-bold mb-0" style="color: yellow;text-shadow: 0 0 20px yellow;">Dogecoins </p>
+      <p class="d-flex justify-content-center align-items-center gap-2">
+        <!-- <img src="/public/assets/Kuboints.png" alt="Kuboints"> -->
+        <span id="puntuacion">0</span>
+      </p>
     </div>
     <button id="canjear-puntos" class="btn btn-outline-warning">Canjear puntos</button>
   </header>
 
-  <div class="row mt-2">
-
-    <div class="flex  container">
-      <div class="col">
-
-        <h1>Jugador 1 - <small>0</small></h1>
+  <main class="mt-2 container">
+    <div class="flex">
+      <div>
+        <h1>Jugador 1 - <small>Puntos: 0</small></h1>
         <hr>
         <div id="jugador-cartas">
-          <!-- <img class="carta" src="assets/cartas/2C.png"> -->
+          <!-- CARTAS DINAMICAS -->
         </div>
 
       </div>
-      <!-- </div>
-      
-      <div class="row container mt-2"> -->
-      <div class="col">
-
-        <h1>Maquína - <small>0</small></h1>
+      <div>
+        <h1>Maquína - <small>Puntos: 0</small></h1>
         <hr>
         <div id="computadora-cartas">
-          <!-- <img class="carta" src="assets/cartas/3C.png"> -->
+          <!-- CARTAS DINAMICAS -->
         </div>
 
       </div>
     </div>
-    <div id="divBotones" class="col text-center">
-
-      <button id="btnNuevo" class="btn btn-danger">Limpiar Mesa</button>
-      <button id="btnPedir" class="btn btn-success">Pedir Carta</button>
-      <button id="btnDetener" class="btn btn-primary">Plantarse</button>
-
+    <div id="divBotones" class="text-center d-flex gap-1 justify-content-center">
+      <button id="btnNuevo" class="btn btn-limpiar">Limpiar Mesa</button>
+      <button id="btnDetener" class="btn btn-plantarse">Plantarse</button>
+      <button id="btnPedir" class="btn btn-pedir">Pedir Carta</button>
     </div>
-  </div>
+  </main>
 
-  <button class="info-game">
-    ?
-  </button>
+  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="info-game ">?</button>
 
-  <div id="app"></div>
+  <!-- <div id="app"></div> -->
 
   <script type="module" src="/main.js"></script>
 </body>
